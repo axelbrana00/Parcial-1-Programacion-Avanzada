@@ -3,7 +3,7 @@ package Parcial1;
 import java.util.ArrayList;
 
 public class Garage {
-    private int capacidadMaxima; 
+    private int capacidadMaxima;
     private int espacioOcupado;
     private ArrayList<Vehiculo> vehiculos;
 
@@ -14,7 +14,7 @@ public class Garage {
     }
 
     public void ingresarVehiculo(Vehiculo v) throws GarageLlenoException, CapacidadInsuficienteException, PatenteDuplicadaException {
-
+        
         if (vehiculos.size() >= 10) {
             throw new GarageLlenoException();
         }
@@ -31,7 +31,7 @@ public class Garage {
 
         vehiculos.add(v);
         espacioOcupado += v.informarEspacio();
-        System.out.println(">>> Éxito: " + v.getMarca() + " ingresado.");
+        System.out.println("Ingreso exitoso: " + v.getMarca() + " [" + v.getPatente() + "]");
     }
 
     public double retirarVehiculo(String patente) throws VehiculoNoEncontradoException {
@@ -44,5 +44,9 @@ public class Garage {
             }
         }
         throw new VehiculoNoEncontradoException();
+    }
+
+    public int getEspacioDisponible() {
+        return capacidadMaxima - espacioOcupado;
     }
 }
