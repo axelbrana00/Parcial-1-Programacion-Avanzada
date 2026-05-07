@@ -1,0 +1,20 @@
+Fundamentacion del Parcial 1
+
+Para armar este sistema, usamos los temas vistos en clase de esta manera:
+
+Interfaz y Clase Abstracta
+Interfaz Calculable: La hicimos para obligar a que todos los vehiculos tengan si o si la funcion de calcular su costo.
+Clase Abstracta Vehiculo: La hicimos abstracta porque a un garage no entra un vehiculo generico, sino algo especifico (Moto, Auto o Camion). Nos sirvio para guardar los datos que todos comparten (como la patente y la marca) y no repetir codigo.
+
+Herencia y Polimorfismo
+Herencia: Moto, Auto y Camion heredan de la clase Vehiculo.
+Polimorfismo: En vez de llenar el Garage con muchos if para ver que vehiculo es, hicimos que cada vehiculo calcule su propio costo y su espacio. El garage solo les pide esa informacion y cada uno responde con sus propias reglas.
+
+Manejo de Excepciones (Errores)
+Para que el programa no se cierre de golpe si el usuario se equivoca, armamos nuestras propias excepciones:
+Unas para controlar el espacio (si el garage esta lleno o si entra un camion y queda poco lugar).
+Otras para controlar los datos (para que no ingresen una patente repetida o intenten sacar un auto que no esta).
+En el Main usamos try y catch para atrapar esos errores y mostrar un mensaje claro en la pantalla.
+
+Listas
+Usamos un ArrayList en la clase Garage para guardar los vehiculos. Elegimos esto en lugar de un arreglo comun porque no sabemos cuantos clientes van a entrar o salir, entonces esta lista puede agrandarse o achicarse sola sin problemas.
