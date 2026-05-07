@@ -20,6 +20,13 @@ public abstract class Vehiculo implements Calculable {
     public int getHorasEstimadas() { 
         return horasEstimadas; 
     }
+    
+    public String getMarca() {
+        return marca;
+    }
+    public String getModelo() {
+        return modelo;
+    }
 
     public abstract int informarEspacio();
 
